@@ -10,120 +10,108 @@ namespace project_summer_school
     {
         
         static void Main(string[] args)
+
         {
+            string[] newStudent = new string[15];
+           
             Console.WriteLine("Welcome to the Hogwart's Student Enrollment System");
-            Console.WriteLine("To enroll a student please select 1.");
+            Console.WriteLine("To enroll a student please select 1");
             
             while (true)
             {
                 int choice = Convert.ToInt32(Console.ReadLine());
                 if (choice == 1)
                 {
-                    EnrollStudent();//static void method
-                    Console.WriteLine("Enter name to enroll another press 1");
+                    EnrollStudent(newStudent);//static void method
+                    Console.WriteLine("To enroll another press 1");
                 }
                 else if (choice == 2)
                 {
-                    RemoveStudent();
+                    RemoveStudent(newStudent);
                 }
             }
 
         }
-        static void EnrollStudent()
+        static void EnrollStudent(string[] newstudent)
         {
             Console.WriteLine("Enter students name.");
             string[] newStudent = new string[15];
             string student = Console.ReadLine();
+           
 
             if (newStudent[0] == null)
             {
-                newStudent[0] = student;
+                newStudent[0] = "1. " + student;
             }
             else if (newStudent[1] == null)
             {
-                newStudent[1] = student;
+                newStudent[1] = "2. " + student;
             }
             else if (newStudent[2] == null)
             {
-                newStudent[2] = student;
+                newStudent[2] = "3. " + student;
             }
             else if (newStudent[3] == null)
             {
-                newStudent[3] = student;
+                newStudent[3] = "4. " + student;
             }
             else if (newStudent[4] == null)
             {
-                newStudent[4] = student;
+                newStudent[4] = "5. " +  student;
             }
             else if (newStudent[5] == null)
             {
-                newStudent[5] = student;
+                newStudent[5] = "6. " + student;
             }
             else if (newStudent[6] == null)
             {
-                newStudent[6] = student;
+                newStudent[6] = "7. " + student;
             }
             else if (newStudent[7] == null)
             {
-                newStudent[7] = student;
+                newStudent[7] = "8. " + student;
             }
             else if (newStudent[8] == null)
             {
-                newStudent[8] = student;
+                newStudent[8] = "9. "  + student;
             }
             else if (newStudent[9] == null)
             {
-                newStudent[9] = student;
+                newStudent[9] = "10. "  + student;
             }
             else if (newStudent[10] == null)
             {
-                newStudent[10] = student;
+                newStudent[10] = "11. " + student;
             }
             else if (newStudent[11] == null)
             {
-                newStudent[11] = student;
+                newStudent[11] = "12. " +  student;
             }
             else if (newStudent[12] == null)
             {
-                newStudent[12] = student;
+                newStudent[12] = "13. " + student;
             }
             else if (newStudent[13] == null)
             {
-                newStudent[13] = student;
+                newStudent[13] = "14. " + student;
             }
             else if (newStudent[14] == null)
             {
-                newStudent[14] = student;
+                newStudent[14] = "15. " + student;
             }
             else
             {
-                for (int index = 0;index > 0; index++)
-                {
-                    Console.WriteLine(index);
-                }
-
+                Console.WriteLine("Roster is now full."); 
             } 
 
 
 
         }
-        static void RemoveStudent()
-        {
-            Console.WriteLine("Enter students name.");
-            string[] newStudent = new string[15];
-            string student = Console.ReadLine();
-
-            for (int index = 0; index < newStudent.Length; index++)
+        static void RemoveStudent(string[] newstudent)
             {
-                newStudent[index] = null;
-                break;
-            }
-            Console.WriteLine("You removed: " + newStudent);
-            for (int index = 0; index < 15; index++)
-            {
-                Console.WriteLine(newStudent[index]);
+            Console.WriteLine(newstudent);            
             }
         }
-    }
-}   
+}
+   
 
