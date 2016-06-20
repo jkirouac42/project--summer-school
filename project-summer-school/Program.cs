@@ -48,9 +48,9 @@ namespace project_summer_school
         {
             Console.WriteLine("Enter students name.");
             string student = Console.ReadLine();
-            
+
             double Cost = 200;
-           
+
             for (int i = 0; i < newStudent.Length; i++)
 
                 if (student.Contains("Malfoy"))
@@ -59,40 +59,73 @@ namespace project_summer_school
                     break;
                 }
 
-                else if (student.Contains("Riddle"))
+                else if (student.ToLower() == "tom")
                 {
-                    Console.WriteLine("Look up special case");
-                    break;
+                    Console.WriteLine("RED ALERT!!! HE WHO MUST NOT BE NAMED!!!");
+                    newStudent[i] = student;
+                    Tuition[i] = Cost;
+
                 }
 
-                else if (student.Contains("Voldemort"))
+                else if (student.ToLower() == "riddle")
+                {
+                    Console.WriteLine("RED ALERT!!! HE WHO MUST NOT BE NAMED!!!");
+                    newStudent[i] = student;
+                    Tuition[i] = Cost;
+                    break;
+
+                }
+
+                else if (student.ToLower() =="voldemort")
                 {
                     Console.WriteLine("Lool up special case");
+                    newStudent[i] = student;
+                    Tuition[i] = Cost;
                     break;
                 }
 
-                else if (student.Contains("Longbottom"))
-                {Console.WriteLine("Tuition is waived");// figure out costing
-                break;
+                else if (student.Contains("Longbottom") && (newStudent[i] == null))
+                {
+                    Console.WriteLine("Tuition is waived");
+                    newStudent[i] = student;
+                    Tuition[i] = Cost - 200;
+                    break;
                 }
 
-                else if (student.Contains("Potter"))
+                else if (student.Contains("Potter") && (newStudent[i] == null))
                 {
                     Console.WriteLine("Got you a discount");
+                    newStudent[i] = student;
+                    Tuition[i] = Cost * .5;
                     break;
                 }
 
                 else if (newStudent[i] == null)
                 {
-                newStudent[i] = student;
-                Console.WriteLine("You entered \n" + student);
-                break;
-                }
-            for (int i = 0; i < Tuition.Length; i++)
-            if (Tuition[i] == 0)
-                {
+                    newStudent[i] = student;
                     Tuition[i] = Cost;
+                    Console.WriteLine("You entered \n" + student);
+                    break;
                 }
+            //for (int i = 0; i < Tuition.Length; i++)
+
+            //    if (student.Contains("Longbottom"))
+            //    {
+            //        Tuition[i] = Cost - 200;
+            //    }
+
+            //    else if (student.Contains("Potter"))
+            //    {
+            //        Tuition[i] = Cost * .5;
+            //    }
+
+            //    else
+            //    {
+            //        Tuition[i] = Cost;
+            //    }
+
+
+            // else if()
 
 
 
@@ -111,7 +144,7 @@ namespace project_summer_school
 
                 if (i == student)
                 {
-                    Console.WriteLine("You entered");
+                    Console.WriteLine("You entered " + student);
                     newStudent[i - 1] = null;
                     break;
                 }
@@ -123,9 +156,9 @@ namespace project_summer_school
 
             {
                 if (newStudent[i] != null)
-                    Console.WriteLine(i + 1  + newStudent[i] + Tuition[i]);
+                    Console.WriteLine(i + 1 + ". " + newStudent[i] + " " + "£" + Tuition[i]);
             }
-        }       
+        }
     }
 }
 
