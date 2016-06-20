@@ -50,6 +50,9 @@ namespace project_summer_school
             string student = Console.ReadLine();
 
             double Cost = 200;
+            var splitnames = student.Split(' ');
+            string firstInitial = splitnames[0];
+            string lastInitial = splitnames[1];
 
             for (int i = 0; i < newStudent.Length; i++)
 
@@ -64,7 +67,6 @@ namespace project_summer_school
                     Console.WriteLine("RED ALERT!!! HE WHO MUST NOT BE NAMED!!!");
                     newStudent[i] = student;
                     Tuition[i] = Cost;
-
                 }
 
                 else if (student.ToLower() == "riddle")
@@ -76,7 +78,7 @@ namespace project_summer_school
 
                 }
 
-                else if (student.ToLower() =="voldemort")
+                else if (student.ToLower() == "voldemort")
                 {
                     Console.WriteLine("Lool up special case");
                     newStudent[i] = student;
@@ -100,6 +102,13 @@ namespace project_summer_school
                     break;
                 }
 
+                else if (firstInitial == lastInitial)
+                {
+                    newStudent[i] = student;
+                    Tuition[i] = Cost * .9;
+                    break;
+                }
+
                 else if (newStudent[i] == null)
                 {
                     newStudent[i] = student;
@@ -107,25 +116,7 @@ namespace project_summer_school
                     Console.WriteLine("You entered \n" + student);
                     break;
                 }
-            //for (int i = 0; i < Tuition.Length; i++)
-
-            //    if (student.Contains("Longbottom"))
-            //    {
-            //        Tuition[i] = Cost - 200;
-            //    }
-
-            //    else if (student.Contains("Potter"))
-            //    {
-            //        Tuition[i] = Cost * .5;
-            //    }
-
-            //    else
-            //    {
-            //        Tuition[i] = Cost;
-            //    }
-
-
-            // else if()
+            
 
 
 
