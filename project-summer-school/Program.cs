@@ -8,7 +8,7 @@ namespace project_summer_school
 {
     class Program
     {
-        
+        static string[] newStudent = new string[15];
         static void Main(string[] args)
 
         {
@@ -19,99 +19,179 @@ namespace project_summer_school
             
             while (true)
             {
-                int choice = Convert.ToInt32(Console.ReadLine());
+                int choice = int.Parse(Console.ReadLine());
                 if (choice == 1)
                 {
                     EnrollStudent(newStudent);//static void method
                     Console.WriteLine("To enroll another press 1");
                 }
-                else if (choice == 2)
+                else if (newStudent[14] != null)
                 {
                     RemoveStudent(newStudent);
                 }
+
             }
 
         }
         static void EnrollStudent(string[] newstudent)
         {
             Console.WriteLine("Enter students name.");
-            string[] newStudent = new string[15];
             string student = Console.ReadLine();
-           
+            
+            for (int i = 0; i < 15; i++)
+                if (newstudent[i] == null) 
+            {
+                    newStudent[i] = student;
+                    break;
+            }
+            
+            
+            
+            
 
-            if (newStudent[0] == null)
+
+            //if (newStudent[0] == null)
+            //{
+            //    newStudent[0] = "0. " + student;
+            //}
+            //else if (newStudent[1] == null)
+            //{
+            //    newStudent[1] = "1. " + student;
+            //}
+            //else if (newStudent[2] == null)
+            //{
+            //    newStudent[2] = "2. " + student;
+            //}
+            //else if (newStudent[3] == null)
+            //{
+            //    newStudent[3] = "3. " + student;
+            //}
+            //else if (newStudent[4] == null)
+            //{
+            //    newStudent[4] = "4. " + student;
+            //}
+            //else if (newStudent[5] == null)
+            //{
+            //    newStudent[5] = "5. " + student;
+            //}
+            //else if (newStudent[6] == null)
+            //{
+            //    newStudent[6] = "6. " + student;
+            //}
+            //else if (newStudent[7] == null)
+            //{
+            //    newStudent[7] = "7. " + student;
+            //}
+            //else if (newStudent[8] == null)
+            //{
+            //    newStudent[8] = "8. " + student;
+            //}
+            //else if (newStudent[9] == null)
+            //{
+            //    newStudent[9] = "9. " + student;
+            //}
+            //else if (newStudent[10] == null)
+            //{
+            //    newStudent[10] = "10. " + student;
+            //}
+            //else if (newStudent[11] == null)
+            //{
+            //    newStudent[11] = "11. " + student;
+            //}
+            //else if (newStudent[12] == null)
+            //{
+            //    newStudent[12] = "12. " + student;
+            //}
+            //else if (newStudent[13] == null)
+            //{
+            //    newStudent[13] = "13. " + student;
+            //}
+            //else if (newStudent[14] == null)
+            //{
+            //    newStudent[14] = "14. " + student;
+            //    Console.WriteLine("Roster is now full.");
+            //}
+           
+            
+            
+            
+        }
+        static void RemoveStudent(string[] newstudent)
+          {
+            Console.WriteLine(newstudent);
+            Console.WriteLine("Enter the number of the student you wish to remove.");
+            int student = int.Parse(Console.ReadLine());
+
+            if (student == 0)
             {
-                newStudent[0] = "1. " + student;
+                newstudent[0] = null;
             }
-            else if (newStudent[1] == null)
+            else if (student == 1)
             {
-                newStudent[1] = "2. " + student;
+                newstudent[1] = null;
             }
-            else if (newStudent[2] == null)
+            else if (student == 2)
             {
-                newStudent[2] = "3. " + student;
+                newstudent[2] = null;
             }
-            else if (newStudent[3] == null)
+            else if (student == 3)
             {
-                newStudent[3] = "4. " + student;
+                newstudent[3] = null;
             }
-            else if (newStudent[4] == null)
+            else if (student == 4)
             {
-                newStudent[4] = "5. " +  student;
+                newstudent[4] = null;
             }
-            else if (newStudent[5] == null)
+            else if (student == 5)
             {
-                newStudent[5] = "6. " + student;
+                newstudent[5] = null;
             }
-            else if (newStudent[6] == null)
+            else if (student == 6)
             {
-                newStudent[6] = "7. " + student;
+                newstudent[6] = null;
             }
-            else if (newStudent[7] == null)
+            else if (student == 7)
             {
-                newStudent[7] = "8. " + student;
+                newstudent[7] = null;
             }
-            else if (newStudent[8] == null)
+            else if (student == 8)
             {
-                newStudent[8] = "9. "  + student;
+                newstudent[8] = null;
             }
-            else if (newStudent[9] == null)
+            else if (student == 9)
             {
-                newStudent[9] = "10. "  + student;
+                newstudent[9] = null;
             }
-            else if (newStudent[10] == null)
+            else if (student == 10)
             {
-                newStudent[10] = "11. " + student;
+                newstudent[10] = null;
             }
-            else if (newStudent[11] == null)
+            else if (student == 11)
             {
-                newStudent[11] = "12. " +  student;
+                newstudent[11] = null;
             }
-            else if (newStudent[12] == null)
+            else if (student == 12)
             {
-                newStudent[12] = "13. " + student;
+                newstudent[12] = null;
             }
-            else if (newStudent[13] == null)
+            else if (student == 13)
             {
-                newStudent[13] = "14. " + student;
+                newstudent[13] = null;
             }
-            else if (newStudent[14] == null)
+            else if (student == 14)
             {
-                newStudent[14] = "15. " + student;
+                newstudent[14] = null;
             }
             else
             {
-                Console.WriteLine("Roster is now full."); 
-            } 
-
-
-
-        }
-        static void RemoveStudent(string[] newstudent)
-            {
-            Console.WriteLine(newstudent);            
+                
             }
-        }
+
+
+          }
+
+    }
+
 }
    
 
