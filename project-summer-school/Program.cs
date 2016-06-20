@@ -9,16 +9,17 @@ namespace project_summer_school
     class Program
     {
         static string[] newStudent = new string[15];
+        static double[] Tuition = new double[15];
         static void Main(string[] args)
 
         {
-            Console.WriteLine("Welcome to the Hogwart's Student Enrollment System");
-            
+            Console.WriteLine("Welcome to the Hogwart's Student Enrollment System\n");
+
             while (true)
             {
-                Console.WriteLine("To enroll a student press 1\n");
+                Console.WriteLine("\nTo enroll a student press 1");
                 Console.WriteLine("To remove student press 2");
-                Console.WriteLine("Print enrollment list press 3");
+                Console.WriteLine("Print enrollment list press 3\n");
                 Console.WriteLine("Exit program press 4"); //break
 
                 int choice = int.Parse(Console.ReadLine());
@@ -47,31 +48,71 @@ namespace project_summer_school
         {
             Console.WriteLine("Enter students name.");
             string student = Console.ReadLine();
-            double cost = 200;
+            
+            double Cost = 200;
+           
             for (int i = 0; i < newStudent.Length; i++)
-                if (newStudent[i] == null)
+
+                if (student.Contains("Malfoy"))
                 {
-                    newStudent[i] = student;
-                    Console.WriteLine("You entered " + student);
+                    Console.WriteLine("Student cannot be enrolled");
                     break;
                 }
+
+                else if (student.Contains("Riddle"))
+                {
+                    Console.WriteLine("Look up special case");
+                    break;
+                }
+
+                else if (student.Contains("Voldemort"))
+                {
+                    Console.WriteLine("Lool up special case");
+                    break;
+                }
+
+                else if (student.Contains("Longbottom"))
+                {Console.WriteLine("Tuition is waived");// figure out costing
+                break;
+                }
+
+                else if (student.Contains("Potter"))
+                {
+                    Console.WriteLine("Got you a discount");
+                    break;
+                }
+
+                else if (newStudent[i] == null)
+                {
+                newStudent[i] = student;
+                Console.WriteLine("You entered \n" + student);
+                break;
+                }
+            for (int i = 0; i < Tuition.Length; i++)
+            if (Tuition[i] == 0)
+                {
+                    Tuition[i] = Cost;
+                }
+
 
 
         }
         static void RemoveStudent()
         {
-            Console.WriteLine(newStudent);
+
+            PrintList();
             Console.WriteLine("Enter the number of the student you wish to remove.");
             int student = int.Parse(Console.ReadLine());
 
             Console.WriteLine(newStudent);
-            Console.WriteLine("Enter name of student you wish to remove.");
 
             for (int i = 0; i < newStudent.Length; i++)
             {
+
                 if (i == student)
                 {
-                    newStudent[i] = null;
+                    Console.WriteLine("You entered");
+                    newStudent[i - 1] = null;
                     break;
                 }
             }
@@ -79,16 +120,12 @@ namespace project_summer_school
         static void PrintList()
         {
             for (int i = 0; i < newStudent.Length; i++)
+
             {
-                Console.WriteLine(newStudent[i]);
+                if (newStudent[i] != null)
+                    Console.WriteLine(i + 1  + newStudent[i] + Tuition[i]);
             }
-        }
-        static void Cost()
-        {
-            double Cost = 200;
-            for (int i =0; i < newStudent.Length; i++)
-            Console.WriteLine(newStudent + "(£200)");
-        }
+        }       
     }
 }
 
